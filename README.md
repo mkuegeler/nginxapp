@@ -1,6 +1,9 @@
 # nginxapp
 This repository provides a simple web app based on **nginx:alpine**.  It runs in a Docker container or a Kubernetes cluster. The initial version comes with just one static "index.html" file in the the "/app" folder. The first section of the script defines global variables used in the script.
 
+## Running the app in simple Docker container.
+The script "app.sh" provides common Docker commands. Type "./app.sh" for help.
+
 ````bash
 # 1. Set variables
 REPO="mkuegeler/nginxapp:latest"
@@ -11,10 +14,7 @@ INTERNAL_PORT="80"
 EXTERNAL_PORT="8081"
 ````
 
-You can customize the values. 
-
-## Running the app in simple Docker container.
-The script "app.sh" provides common Docker commands. Type "./app.sh" for help.
+Update the variables IMAGE, CONTAINER, HOST, EXTERNAL_PORT according your custom environment.
 
 ## Running the application on Kubernetes
 Requirements
@@ -74,7 +74,7 @@ NOTES:
  Run the commands in the NOTES to get a URL to access our application.
 
 ````bash
- export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services nx-example-nginxweb)
+export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services nx-example-nginxweb)
 ````
 
 ````bash
