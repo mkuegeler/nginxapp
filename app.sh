@@ -39,7 +39,7 @@ rm()
   docker rm $CONTAINER
 }
 
-# 7. Remove image
+# 7. Remove local image
 rmi()
 {
   docker rmi $IMAGE
