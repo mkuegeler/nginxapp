@@ -1,8 +1,9 @@
 # nginxapp
-This repository provides a simple web app based on **nginx:alpine**.  It runs in a Docker container or a Kubernetes cluster. The initial version comes with just one static "index.html" file in the the "/app" folder. The first section of the script defines global variables used in the script.
+This repository provides a simple web app based on **nginx:alpine**.  It runs in a Docker container or a Kubernetes cluster. The initial version comes with just one static "index.html" file in the the "/app" folder. 
 
 ## Running the app in simple Docker container.
 The script "app.sh" provides common Docker commands. Type "./app.sh" for help.
+The first section of the script defines global variables.
 
 ````bash
 # 1. Set variables
@@ -24,12 +25,12 @@ Requirements
 ### 1. Create a helm chart
 
 ```bash
-helm create nx-example
+helm create nginxweb
 ```
-Note: you can use a custom name instead of 'nx-example'.
+Note: you can use a custom name instead of 'nginxweb'.
 
 ### 2. Customize values.yaml 
-Open the file "values.yaml" in directory "nx-example".
+Open the file "values.yaml" in directory "nginxweb".
 
 In "values.yaml", update the image keys to reference the nginx image: 
 
@@ -45,7 +46,7 @@ image:
  Run the chart through the linter to ensure that your template is well-formed. 
 
 ````bash
-helm lint ./nx-example
+helm lint ./nxweb
 ````
 
 ### 3. Install chart
@@ -54,6 +55,7 @@ Run "helm install" to deploy the application:
 ````bash
 helm install nx-example ./nginxweb --set service.type=NodePort
 ````
+"nx-example" is the name of your deployment. 
 
 The output of helm install displays a handy summary of the state of the release, what objects were created, and the rendered NOTES.txt file to explain what to do next. Run the commands in the output to get a URL to access the service and pull it up in your browser.
 
