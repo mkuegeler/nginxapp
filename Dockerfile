@@ -1,2 +1,2 @@
-FROM bitnami/nginx:latest
-COPY . /app
+FROM nginx
+COPY app /usr/share/nginx/html
