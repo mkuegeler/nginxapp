@@ -46,7 +46,7 @@ image:
  Run the chart through the linter to ensure that your template is well-formed. 
 
 ````bash
-helm lint ./nxweb
+helm lint ./nginxweb
 ````
 
 ### 3. Install chart
@@ -88,7 +88,7 @@ echo http://$NODE_IP:$NODE_PORT
 ````
 
 ### 5. Delete the service
-if you want to delete the service, type:
+If you want to delete the service, type:
 
 ````bash
 helm delete nx-example
